@@ -160,7 +160,6 @@ main{margin-left:238px;width:calc(100% - 238px);padding:30px 32px 55px;max-width
 <script>const K='rekeningku-v2';
 const baseCommands=[
  {key:'gaji',label:'Bu Vanny',type:'income',icon:'👩🏻‍💼'},
- {key:'jasdor',label:'Pencairan Merchant Jasdor',type:'income',icon:'☕'},
  {key:'otp',label:'Pembelian OTP HP',type:'expense',icon:'📱'},
  {key:'vsphone',label:'Paket VSPhone',type:'expense',icon:'📶'},
  {key:'vmos',label:'Paket VMOS',type:'expense',icon:'📲'},
@@ -176,7 +175,7 @@ const baseCommands=[
 let db=JSON.parse(localStorage.getItem(K)||'null')||{opening:0,tx:[],commands:baseCommands};
 if(!db.commands?.length)db.commands=baseCommands;
 // Keep existing custom commands and transaction history, while standardizing these shortcuts.
-db.commands=db.commands.filter(c=>String(c.key||'').toLowerCase()!=='tj');
+db.commands=db.commands.filter(c=>!['tj','jasdor'].includes(String(c.key||'').toLowerCase()));
 for(const preset of baseCommands.filter(c=>['wt','cs','kk','kt'].includes(c.key))){
   const existing=db.commands.find(c=>String(c.key||'').toLowerCase()===preset.key);
   if(existing){existing.key=preset.key;existing.label=preset.label;existing.type=preset.type;existing.icon=preset.icon;}
@@ -281,7 +280,7 @@ function runCommand(){
 }
 $('#commandBtn').onclick=runCommand;$('#commandInput').onkeydown=e=>{if(e.key==='Enter')runCommand()};
 function suggestionRender(){
-  $('#suggestions').innerHTML=db.commands.map(c=>`<span data-c="${c.key}">${c.key}</span>`).join('');
+  $('#suggestions').innerHTML=db.commands.map(c=>{const names={wt:'Warteg',cs:'Cash',kk:'Kopken',kt:'Weekend'};const key=String(c.key||'').toLowerCase();return `<span data-c="${key}">${names[key]?key.toUpperCase()+' - '+names[key]:c.key}</span>`}).join('');
  $$('#suggestions span').forEach(x=>x.onclick=()=>{$('#commandInput').value=x.dataset.c+' ';$('#commandInput').focus()});
 }
 function editTx(id){const t=db.tx.find(x=>x.id===id);if(t)openTx(t)}
