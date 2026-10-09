@@ -3,43 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#6d5dfc">
-  <title>Rekeningku — Financial Tracker</title>
-  <style>:root{--bg:#f6f7fb;--card:#fff;--text:#1d2230;--muted:#7d8......suggestions{
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:7px;
-  margin-top:9px;
-  width:100%;
-  max-width:100%;
-  min-width:0;
-  max-height:150px;
-  overflow-y:auto;
-  overflow-x:hidden;
-  box-sizing:border-box;
-}
-
-.suggestions span{
-  display:block;
-  width:100%;
-  min-width:0;
-  max-width:100%;
-  overflow:hidden;
-  text-overflow:ellipsis;
-  white-space:nowrap;
-  text-align:center;
-  font-size:10px;
-  padding:7px 5px;
-  background:#f5f5fb;
-  border-radius:99px;
-  color:#666b80;
-  cursor:pointer;
-  box-sizing:border-box;
-}
-}496;--line:#e9ebf2;--primary:#6d5dfc;--primary2:#8c57e8;--green:#19a66b;--red:#e25d6a;--shadow:0const money=s=>{s=String(s||'').toLowerCase().replace(/\s/g,'').replace(/rp/g,'');if(s.endsWith('jt'))return parseFloat(s.replace(',','.'))*1e6;if(s.endsWith('rb')||s.endsWith('k'))return parseFloat(s.replace(',','.'))*1e3;let n=s.replace(/\./g,'').replace(',','.');if(!s.includes(',')&&s.includes('.')&&s.split('.').length===2&&s.split('.')[1].length<=2)n=s;return parseFloat(n)*1000||0}; 12px 35px rgba(36,40,70,.07)}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.app{display:flex;min-height:100vh}.sidebar{width:245px;background:#fff;border-right:1px solid var(--line);padding:25px 16px;position:fixed;inset:0 auto 0 0;z-index:4}.logo{display:flex;gap:10px;align-items:center;margin:2px 8px 34px}.logo>span{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;color:#fff;background:linear-gradient(135deg,var(--primary),var(--primary2));font-size:20px}.logo b{display:block;font-size:17px}.logo small{display:block;color:var(--muted);font-size:10px;margin-top:2px}.nav{width:100%;border:0;background:transparent;padding:12px 13px;border-radius:12px;text-align:left;color:#70778b;font-weight:700;display:flex;gap:11px;align-items:center;margin:4px 0;cursor:pointer}.nav.active,.nav:hover{background:#f0efff;color:var(--primary)}.side-note{position:absolute;left:16px;right:16px;bottom:22px;background:#f7f6ff;border-radius:15px;padding:13px;color:#6e7190;font-size:11px;line-height:1.6}.side-note code{background:#fff;padding:2px 5px;border-radius:5px}main{margin-left:245px;width:calc(100% - 245px);padding:34px 38px 60px;max-width:1300px}.page{display:none}.page.active{display:block}.page-head{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:22px}.eyebrow{font-size:10px;letter-spacing:1.4px;color:var(--primary);font-weight:900;margin:0 0 6px}.page-head h1{margin:0;font-size:29px;letter-spacing:-.7px}.muted{color:var(--muted);font-size:12px;margin:6px 0 0}.balance-card{border-radius:25px;padding:24px;color:#fff;background:linear-gradient(135deg,#675cf3,#8a53dd);box-shadow:0 18px 40px rgba(108,93,252,.22);margin-bottom:16px}.balance-card>div:first-child{display:flex;justify-content:space-between;font-size:12px;opacity:.85}.balance-card strong{display:block;font-size:38px;margin:9px 0 23px;letter-spacing:-1px}.balance-bottom{display:flex;gap:30px;font-size:12px}.balance-bottom b{margin-left:6px}.command-box{background:#fff;border:1px solid var(--line);border-radius:20px;padding:18px;box-shadow:var(--shadow)}.command-title{display:flex;align-items:center;gap:8px;margin-bottom:11px}.command-title span{font-size:11px;color:var(--muted);font-weight:500}.command-row{display:flex;gap:9px}.command-row input{flex:1;border:1px solid var(--line);border-radius:13px;padding:14px;font-size:14px;outline:none}.command-row input:focus{border-color:#b7b0ff;box-shadow:0 0 0 3px #6d5dfc12}.suggestions span{font-size:10px;padding:6px 9px;background:#f5f5fb;border-radius:99px;color:#666b80;cursor:pointer}.section-head{display:flex;justify-content:space-between;align-items:center;margin:25px 2px 10px}.section-head h2{font-size:15px;margin:0}.text-btn{border:0;background:transparent;color:var(--primary);font-weight:800;font-size:11px;cursor:pointer}.income-cards{display:grid;grid-template-columns:1fr 1fr;gap:12px}.income-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:15px;display:flex;align-items:center;gap:12px;box-shadow:var(--shadow)}.icon{width:42px;height:42px;border-radius:13px;display:grid;place-items:center;font-size:20px}.purple{background:#efedff}.orange{background:#fff0df}.income-card span,.income-card small{display:block}.income-card span{font-size:11px;color:var(--muted)}.income-card b{display:block;font-size:17px;margin:3px 0}.income-card small{font-size:10px;color:var(--muted)}.card{background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow)}.table-card{padding:5px 15px}.tx{display:flex;align-items:center;gap:11px;padding:13px 3px;border-bottom:1px solid var(--line)}.tx:last-child{border-bottom:0}.tx-icon{width:35px;height:35px;border-radius:11px;display:grid;place-items:center;background:#f4f4fa}.tx-main{flex:1}.tx-main b{font-size:12px;display:block}.tx-main small{font-size:10px;color:var(--muted)}.tx-amount{text-align:right;font-size:12px;font-weight:850}.in{color:var(--green)}.out{color:var(--red)}.filters{padding:12px;display:flex;gap:8px;margin-bottom:12px}.filters input,.filters select,.page-head select{border:1px solid var(--line);background:#fff;border-radius:11px;padding:10px;font-size:12px;outline:0}.filters input{flex:1}.primary,.ghost{border:0;border-radius:12px;padding:11px 14px;font-weight:800;cursor:pointer}.primary{background:var(--primary);color:#fff}.ghost{background:#f0efff;color:var(--primary)}.report-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:14px;margin-bottom:14px}.report-grid .card{padding:19px}.report-grid h3{font-size:14px;margin:0 0 16px}.bars{height:180px;display:flex;align-items:end;gap:12px;padding:10px 5px}.bar-group{height:100%;flex:1;display:flex;align-items:end;gap:3px;position:relative}.bar{flex:1;border-radius:6px 6px 2px 2px;min-height:3px}.bar.in{background:#52c794}.bar.out{background:#ef8d98}.bar-label{position:absolute;bottom:-20px;font-size:9px;color:var(--muted);left:50%;transform:translateX(-50%)}.break{margin:11px 0}.break-top{display:flex;justify-content:space-between;font-size:11px}.track{height:7px;background:#f0f1f6;border-radius:99px;margin-top:6px;overflow:hidden}.track i{display:block;height:100%;background:linear-gradient(90deg,var(--primary),#9a69e8);border-radius:99px}.insight .big{font-size:25px;font-weight:900}.insight p{font-size:11px;color:var(--muted);line-height:1.6}.command-table{padding:6px 18px}.command-row-item{display:grid;grid-template-columns:100px 100px 1fr auto;align-items:center;gap:15px;padding:14px 0;border-bottom:1px solid var(--line);font-size:12px}.command-row-item:last-child{border-bottom:0}.pill{font-size:9px;font-weight:900;border-radius:99px;padding:6px 8px;width:max-content}.pill.in{background:#e8f8f0}.pill.out{background:#fff0f2}.modal{position:fixed;inset:0;background:rgba(22,25,42,.55);display:none;align-items:center;justify-content:center;padding:16px;z-index:20}.modal.show{display:flex}.modal-inner{width:min(520px,100%);background:#fff;border-radius:23px;padding:22px;box-shadow:0 25px 70px rgba(0,0,0,.2)}.modal-inner.small{width:min(430px,100%)}.modal-head{display:flex;justify-content:space-between;align-items:start;margin-bottom:20px}.modal-head h2{margin:0;font-size:21px}.close{border:0;background:#f3f4f8;border-radius:10px;width:32px;height:32px;font-size:21px;cursor:pointer}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.form-grid label,.modal-inner>label{font-size:11px;font-weight:800;color:#6e7486}.form-grid input,.form-grid select,.modal-inner>label input{display:block;width:100%;margin-top:6px;padding:12px;border:1px solid var(--line);border-radius:11px;font:inherit;outline:0}.full{grid-column:1/-1}.unknown-tip{background:#f7f6ff;border-radius:12px;padding:10px;margin-top:13px;color:#686c85;font-size:10px;line-height:1.5}.modal-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:18px}.tiny{font-size:10px}.mobile-head{display:none}
+  <meta name="theme-color" content="#8a5b43">
+  <meta name="application-name" content="YEGA💖">
+  <meta name="apple-mobile-web-app-title" content="YEGA💖">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" type="image/svg+xml" href="./icon.svg">
+  <link rel="apple-touch-icon" href="./icon.svg">
+  <title>YEGA💖 — Catatan Keuangan</title>
+  <style>
+:root{--bg:#fffaf3;--card:#fffefb;--text:#49372f;--muted:#927f73;--line:#eee0d3;--primary:#8a5b43;--primary2:#b47b5b;--green:#378b68;--red:#c75b61;--shadow:0 8px 24px rgba(101,68,47,.08)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Trebuchet MS',ui-rounded,system-ui,-apple-system,'Segoe UI',sans-serif}
+button,input,select{font:inherit}
+button{touch-action:manipulation}
+.app{display:flex;min-height:100vh}
+.sidebar{width:238px;background:#fffdf9;border-right:1px solid var(--line);padding:24px 15px;position:fixed;inset:0 auto 0 0;z-index:4}
+.logo{display:flex;gap:10px;align-items:center;margin:2px 8px 30px}.logo>span{width:39px;height:39px;border-radius:14px;display:grid;place-items:center;color:#fff;background:linear-gradient(135deg,#8a5b43,#bd8c6c);font-size:20px}.logo b{display:block;font-size:18px;font-weight:900}.logo small{display:block;color:var(--muted);font-size:11px;margin-top:3px}
+.nav{width:100%;border:0;background:transparent;padding:12px 13px;border-radius:13px;text-align:left;color:#87766c;font-weight:800;display:flex;gap:11px;align-items:center;margin:4px 0;cursor:pointer}.nav.active,.nav:hover{background:#f4e8dc;color:#754b37}
+.side-note{position:absolute;left:15px;right:15px;bottom:20px;background:#f8eee3;border-radius:15px;padding:13px;color:#7c5c49;font-size:11px;line-height:1.6}.side-note code{background:#fff;padding:2px 5px;border-radius:5px}
+main{margin-left:238px;width:calc(100% - 238px);padding:30px 32px 55px;max-width:1320px}
+.page{display:none}.page.active{display:block}#commands{display:none!important}
+.page-head{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:20px}.eyebrow{font-size:10px;letter-spacing:1.2px;color:#966448;font-weight:900;margin:0 0 6px}.page-head h1{margin:0;font-size:27px;letter-spacing:-.5px}.muted{color:var(--muted);font-size:12px;margin:6px 0 0}
+.balance-card{border-radius:24px;padding:23px;color:#fff;background:linear-gradient(135deg,#80543e,#b37a59);box-shadow:0 14px 32px rgba(119,76,49,.18);margin-bottom:16px}.balance-card>div:first-child{display:flex;justify-content:space-between;font-size:12px;opacity:.9}.balance-card strong{display:block;font-size:36px;margin:10px 0 22px;letter-spacing:-.8px}.balance-bottom{display:flex;gap:25px;flex-wrap:wrap;font-size:12px}.balance-bottom b{margin-left:5px}
+.command-box{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:17px;box-shadow:var(--shadow)}.command-title{display:flex;align-items:center;gap:8px;margin-bottom:11px}.command-title span{font-size:11px;color:var(--muted);font-weight:500}.command-row{display:flex;gap:9px}.command-row input{flex:1;min-width:0;border:1px solid var(--line);border-radius:13px;padding:13px;font-size:14px;outline:none;background:#fff}.command-row input:focus{border-color:#c39b7f;box-shadow:0 0 0 3px #8a5b4315}.command-row button{border:0;border-radius:12px;background:#8a5b43;color:#fff;font-weight:900;padding:0 17px}
+.suggestions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;margin-top:9px;width:100%;max-width:100%;min-width:0;max-height:150px;overflow-y:auto;overflow-x:hidden}.suggestions span{display:block;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;font-size:10px;padding:7px 5px;background:#f6eee5;border-radius:99px;color:#765540;cursor:pointer}.suggestions span[data-c="otp"],.suggestions span[data-c="vsphone"],.suggestions span[data-c="setoran"],.suggestions span[data-c="jasdor"]{display:none}
+.section-head{display:flex;justify-content:space-between;align-items:center;margin:24px 2px 10px}.section-head h2{font-size:15px;margin:0}.text-btn{border:0;background:transparent;color:#8a5b43;font-weight:900;font-size:11px;cursor:pointer}
+.income-cards{display:grid;grid-template-columns:1fr 1fr;gap:12px}.income-card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:15px;display:flex;align-items:center;gap:12px;box-shadow:var(--shadow)}.icon{width:42px;height:42px;border-radius:14px;display:grid;place-items:center;font-size:20px}.purple{background:#f3e9df}.orange{background:#f9eadb}.income-card span,.income-card small{display:block}.income-card span{font-size:11px;color:var(--muted)}.income-card b{display:block;font-size:17px;margin:3px 0}.income-card small{font-size:10px;color:var(--muted)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow)}.table-card{padding:5px 15px}.tx{display:flex;align-items:center;gap:11px;padding:13px 3px;border-bottom:1px solid var(--line)}.tx:last-child{border-bottom:0}.tx-icon{width:35px;height:35px;flex:0 0 35px;border-radius:12px;display:grid;place-items:center;background:#f7eee5}.tx-main{flex:1;min-width:0}.tx-main b{font-size:12px;display:block}.tx-main small{font-size:10px;color:var(--muted)}.tx-amount{text-align:right;font-size:12px;font-weight:900;white-space:nowrap}.in{color:var(--green)}.out{color:var(--red)}
+.filters{padding:12px;display:flex;gap:8px;margin-bottom:12px}.filters input,.filters select,.page-head select{border:1px solid var(--line);background:#fffdf9;border-radius:11px;padding:10px;font-size:12px;outline:0}.filters input{flex:1;min-width:120px}.primary,.ghost{border:0;border-radius:12px;padding:11px 14px;font-weight:900;cursor:pointer}.primary{background:#8a5b43;color:#fff}.ghost{background:#f4e8dc;color:#795039}
+.report-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:14px;margin-bottom:14px}.report-grid .card{padding:19px}.report-grid h3{font-size:14px;margin:0 0 16px}.bars{height:180px;display:flex;align-items:end;gap:12px;padding:10px 5px}.bar-group{height:100%;flex:1;display:flex;align-items:end;gap:3px;position:relative}.bar{flex:1;border-radius:5px 5px 2px 2px;min-height:3px}.bar.in{background:#65b78d}.bar.out{background:#e8a0a1}.bar-label{position:absolute;bottom:-20px;font-size:9px;color:var(--muted);left:50%;transform:translateX(-50%)}.break{margin:11px 0}.break-top{display:flex;justify-content:space-between;font-size:11px;gap:8px}.track{height:7px;background:#f3e9df;border-radius:99px;margin-top:6px;overflow:hidden}.track i{display:block;height:100%;background:linear-gradient(90deg,#9b6b4d,#c49a79);border-radius:99px}.insight .big{font-size:25px;font-weight:900}.insight p{font-size:11px;color:var(--muted);line-height:1.6}.command-table{padding:6px 18px}.command-row-item{display:grid;grid-template-columns:100px 100px 1fr auto;align-items:center;gap:15px;padding:14px 0;border-bottom:1px solid var(--line);font-size:12px}.pill{font-size:9px;font-weight:900;border-radius:99px;padding:6px 8px;width:max-content}.pill.in{background:#e8f8f0}.pill.out{background:#fff0f2}
+.modal{position:fixed;inset:0;background:rgba(57,39,29,.48);display:none;align-items:center;justify-content:center;padding:16px;z-index:20}.modal.show{display:flex}.modal-inner{width:min(520px,100%);max-height:90vh;overflow-y:auto;background:#fffdf9;border:1px solid var(--line);border-radius:23px;padding:21px;box-shadow:0 25px 70px rgba(62,40,27,.22)}.modal-inner.small{width:min(430px,100%)}.modal-head{display:flex;justify-content:space-between;align-items:start;margin-bottom:18px}.modal-head h2{margin:0;font-size:21px}.close{border:0;background:#f4e8dc;border-radius:10px;width:32px;height:32px;font-size:21px;cursor:pointer}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.form-grid label,.modal-inner>label{font-size:11px;font-weight:900;color:#796454}.form-grid input,.form-grid select,.modal-inner>label input{display:block;width:100%;margin-top:6px;padding:12px;border:1px solid var(--line);border-radius:11px;font:inherit;outline:0;background:#fff}.full{grid-column:1/-1}.unknown-tip{background:#f8eee3;border-radius:12px;padding:10px;margin-top:13px;color:#785a47;font-size:10px;line-height:1.5}.modal-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:18px}.tiny{font-size:10px}.mobile-head{display:none}
+#fDateQuick{margin-top:7px;width:100%;border:1px solid var(--line);background:#fdf5ec;border-radius:10px;padding:9px;color:#76533e;font-size:12px}
 @media(max-width:800px){.sidebar{width:205px}.sidebar.collapsed{transform:translateX(-100%)}main{margin-left:205px;width:calc(100% - 205px);padding:22px 16px}.income-cards,.report-grid{grid-template-columns:1fr}.command-row-item{grid-template-columns:80px 90px 1fr}.side-note{display:none}}
-@media(max-width:620px){.sidebar{transform:translateX(-100%);transition:.2s;box-shadow:10px 0 30px rgba(30,35,60,.12)}.sidebar.open #closeMenuBtn{display:block}.sidebar.open{transform:translateX(0)}main{margin-left:0;width:100%;padding:12px 13px 40px}.mobile-head{display:flex;align-items:center;justify-content:space-between;padding:6px 2px 18px}.mobile-head button{border:0;background:#fff;border-radius:10px;padding:8px 10px}.page-head{align-items:start}.page-head h1{font-size:24px}.page-head .ghost{display:none}.balance-card strong{font-size:30px}.filters{flex-wrap:wrap}.filters input{flex-basis:100%}.form-grid{grid-template-columns:1fr}.full{grid-column:auto}.command-title span{display:none}}
+@media(max-width:620px){.sidebar{transform:translateX(-100%);transition:.2s;box-shadow:10px 0 30px rgba(62,40,27,.12)}.sidebar.open #closeMenuBtn{display:block}.sidebar.open{transform:translateX(0)}main{margin-left:0;width:100%;padding:12px 13px 40px}.mobile-head{display:flex;align-items:center;justify-content:space-between;padding:6px 2px 18px}.mobile-head button{border:0;background:#fffdf9;border-radius:10px;padding:8px 10px;color:#795039}.page-head{align-items:start}.page-head h1{font-size:23px}.page-head .ghost{display:none}.balance-card strong{font-size:29px}.filters{flex-wrap:wrap}.filters input{flex-basis:100%}.form-grid{grid-template-columns:1fr}.full{grid-column:auto}.command-title span{display:none}.income-cards{grid-template-columns:1fr}.tx{gap:7px}.tx-amount{font-size:11px}.suggestions{grid-template-columns:repeat(3,minmax(0,1fr))}}
 </style>
 <link rel="manifest" href="manifest.webmanifest"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default"></head>
 <body>
@@ -50,9 +48,9 @@
       <button class="nav active" data-page="dashboard">⌂ <span>Dashboard</span></button>
       <button class="nav" data-page="transactions">↕ <span>Transaksi</span></button>
       <button class="nav" data-page="reports">◔ <span>Laporan</span></button>
-      <button class="nav" data-page="commands">⌘ <span>Commands</span></button>
+      
     </nav>
-    <div class="side-note">💡 <b>Tip</b><br>ketik <code>gaji 150k</code> di command bar untuk mencatat cepat.</div>
+    <div class="side-note">🌷 <b>Catat pelan-pelan</b><br>Riwayat lama tetap tersimpan. Gunakan Catat Cepat untuk transaksi berulang.</div>
   </aside>
 
   <main>
@@ -70,7 +68,7 @@
       </div>
 
    <div class="command-box" style="min-width:0;max-width:100%;overflow:hidden">
-        <div class="command-title">⚡ <b>Quick Command</b><span>catat transaksi tanpa ribet</span></div>
+        <div class="command-title">✍️ <b>Catat Cepat</b><span>untuk transaksi yang sering kamu pakai</span></div>
         <div id="modePanel" style="margin:12px 0 4px;padding:12px 14px;border:1px solid var(--line);border-radius:16px;background:#fafaff">
   <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap">
     <div><b style="font-size:14px">Mode tanggal</b><div id="modeHelp" class="muted" style="font-size:12px;margin-top:3px">📖 Arsip Lama: command tanpa tanggal tidak dipaksa jadi hari ini.</div></div>
@@ -135,7 +133,7 @@
     <label>Jenis<select id="fType"><option value="income">Pemasukan</option><option value="expense">Pengeluaran</option></select></label>
     <label>Kategori<select id="fCategory"></select></label>
     <label>Nominal<input id="fAmount" inputmode="numeric" placeholder="150000"></label>
-    <label>Tanggal<input id="fDate" type="date"><div id="fDateHint" class="muted" style="font-size:12px;margin-top:5px"></div></label>
+    <label>Tanggal<input id="fDate" type="date"><select id="fDateQuick" aria-label="Pilih tanggal dari riwayat"><option value="">📅 Pilih tanggal dari riwayat</option></select><div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:7px"><button type="button" class="ghost" id="dateYesterday" style="padding:7px 9px;font-size:11px">Kemarin</button><button type="button" class="ghost" id="dateToday" style="padding:7px 9px;font-size:11px">Hari ini</button></div><div id="fDateHint" class="muted" style="font-size:12px;margin-top:5px"></div></label>
     <label class="full">Catatan (opsional)<input id="fNote" placeholder="mis. gaji hari ke-3"></label>
   </div>
   <div class="unknown-tip">💡 Kalau belum tahu tanggalnya, kosongkan saja. Transaksi akan masuk ke <b>“Belum ditempatkan”</b>.</div>
@@ -234,6 +232,15 @@ function commandParse(raw){
  }
  return {key,amount,date,monthOnly,dateUnknown};
 }
+function fillQuickDates(selected=''){
+  const el=$('#fDateQuick'); if(!el)return;
+  const dates=[...new Set(db.tx.map(t=>t.date).filter(Boolean))].sort((a,b)=>b.localeCompare(a));
+  el.innerHTML='<option value="">📅 Pilih tanggal dari riwayat</option>'+dates.map(d=>'<option value="'+d+'">'+new Date(d+'T00:00:00').toLocaleDateString('id-ID',{day:'numeric',month:'long',year:'numeric'})+'</option>').join('');
+  el.value=selected||'';
+}
+$('#fDateQuick').onchange=()=>{if($('#fDateQuick').value)$('#fDate').value=$('#fDateQuick').value};
+$('#dateYesterday').onclick=()=>{const d=new Date();d.setDate(d.getDate()-1);$('#fDate').value=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');$('#fDateQuick').value=''};
+$('#dateToday').onclick=()=>{const d=new Date();$('#fDate').value=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');$('#fDateQuick').value=''};
 function openTx(data={}){
  editing=data.id||null; window.__pendingMonthOnly=data.monthOnly||''; window.__pendingDateUnknown=!!data.dateUnknown;
  $('#fType').value=data.type||'income';
@@ -335,7 +342,7 @@ render();
 </script>
 
 <div id="installBar" style="display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:30;background:#fff;border:1px solid #e9ebf2;border-radius:18px;padding:12px 14px;box-shadow:0 15px 45px rgba(30,35,60,.18);align-items:center;gap:10px">
-  <div style="flex:1;font-size:11px"><b>📱 Pasang Rekeningku</b><br><span style="color:#7d8496">Tambahkan ke layar utama supaya terasa seperti aplikasi.</span></div>
+  <div style="flex:1;font-size:11px"><b>📱 Pasang YEGA💖</b><br><span style="color:#7d8496">Tambahkan ke layar utama supaya terasa seperti aplikasi.</span></div>
   <button id="installBtn" class="primary">Pasang</button>
 </div>
 
