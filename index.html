@@ -167,10 +167,21 @@ const baseCommands=[
  {key:'cod',label:'Bayar COD Paket',type:'expense',icon:'📦'},
  {key:'kuota',label:'Beli Kuota',type:'expense',icon:'🌐'},
  {key:'tarik',label:'Tarik Tunai',type:'expense',icon:'💵'},
- {key:'setoran',label:'Bayar Setoran',type:'expense',icon:'🧾'}
+ {key:'setoran',label:'Bayar Setoran',type:'expense',icon:'🧾'},
+ {key:'wt',label:'Warteg',type:'expense',icon:'🍛'},
+ {key:'cs',label:'Cash',type:'expense',icon:'💵'},
+ {key:'kk',label:'Kopken',type:'expense',icon:'☕'},
+ {key:'kt',label:'Weekend',type:'expense',icon:'🛍️'}
 ];
 let db=JSON.parse(localStorage.getItem(K)||'null')||{opening:0,tx:[],commands:baseCommands};
 if(!db.commands?.length)db.commands=baseCommands;
+// Keep existing custom commands and transaction history, while standardizing these shortcuts.
+db.commands=db.commands.filter(c=>String(c.key||'').toLowerCase()!=='tj');
+for(const preset of baseCommands.filter(c=>['wt','cs','kk','kt'].includes(c.key))){
+  const existing=db.commands.find(c=>String(c.key||'').toLowerCase()===preset.key);
+  if(existing){existing.key=preset.key;existing.label=preset.label;existing.type=preset.type;existing.icon=preset.icon;}
+  else db.commands.push({...preset});
+}
 if(!db.mode) db.mode='archive';
 let editing=null;
 
